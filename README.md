@@ -1,3 +1,3 @@
 # Sails
 
-a [Sails](http://sailsjs.org) application
+ [Sails](http://sailsjs.org) application running on Nodejs over Express Framework.

@@ -1,0 +1,65 @@
+<div class="jumbotron vertical-center">
+    <div class="container">
+		<div class="row">
+			<center><h2>Sign Up</h2></center>
+		</div>
+		<% if(flash && flash.err){ %>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="alert alert-warning">
+				
+				<% Object.keys(flash.err).forEach(function(error){ %>
+					<%= JSON.stringify(flash.err[error]) %>
+				<% }) %>
+				
+				</div>
+			</div>
+		</div>
+		<% } %>
+		<form class="form" action="/user/create" method="POST">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<input type="text" class="form-control" name='name' placeholder="Name" >
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<input type="text" class="form-control" name="title" placeholder="title">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<input type="email" class="form-control" name="email" placeholder="Email" >
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<input type="text" class="form-control" name="password" placeholder="Password" >
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<input type="text" class="form-control" name="confirmpwd" placeholder="Confirm Password" >
+					<input type="hidden" name="_csrf" value="<%= _csrf %>">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary">
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+</div>

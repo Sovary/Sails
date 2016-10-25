@@ -1,0 +1,40 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-6">
+			<h3>Customers</h3>
+			<div class="form-group">
+				<a class="btn btn-info" href="/customer/new">Add new</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			
+			<table class="table">
+				<th>	
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+					<td>Email</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				</th>
+			<% _.each(customers,function(customer){ %>
+				<tr data-id="<%= customer.id %>" data-model="customer">
+					<td><%= customer.id %></td>
+					<td><%= customer.name %></td>
+					<td><%= customer.email %></td>
+					
+					<!--Sail has provided or override-->
+					<td><a class="btn btn-primary" href="/customer/show/<%= customer.id %>">Show</a></td>
+					<td><a class="btn btn-warning" href="/customer/edit/<%= customer.id %>">Edit</a></td>
+					<!--Sail has provided-->
+					<td><a class="btn btn-danger" href="/customer/destroy/<%= customer.id %>">Delete</a></td>
+				</tr>
+			<% }); %>
+			</table>
+		</div>
+	</div>
+</div>
